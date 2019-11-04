@@ -99,11 +99,11 @@ class TestGitTarballs(unittest.TestCase):
         self.assertEqual(
             "2013",
             ghb.parse_version_from_parent_dir("keystone-2013.2.b1.140.g636",
-                                              "\w+\-(\d+)"))
+                                              r"\w+\-(\d+)"))
 
     def test_parse_version_from_parent_dir_error(self):
         self.assertRaises(SystemExit,
-                          ghb.parse_version_from_parent_dir, "", "\w+")
+                          ghb.parse_version_from_parent_dir, "", r"\w+")
 
     def test_get_upstream_commit(self):
         self.assertEqual('921b7c514fb79bd4b8a023f34d22df4efe5406ad',

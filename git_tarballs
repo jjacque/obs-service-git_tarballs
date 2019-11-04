@@ -106,14 +106,14 @@ def parse_changelog(changelog):
 
     """
     return re.finditer(r'^commit (?P<commit>.*?)$'
-                       '(?:\nMerge:\s+\S+\s+(?P<mergecommit>.*?)\n|\n)'
-                       '.*?'
-                       '^Author:\s+(?P<author>.*?)$'
-                       '.*?'
-                       '^Date:\s+(?P<date>.*?)$'
-                       '.*?'
-                       '\n\n\s+(?P<message>.*?)$'
-                       '(?:\n\n|\n.*?)',
+                       r'(?:\nMerge:\s+\S+\s+(?P<mergecommit>.*?)\n|\n)'
+                       r'.*?'
+                       r'^Author:\s+(?P<author>.*?)$'
+                       r'.*?'
+                       r'^Date:\s+(?P<date>.*?)$'
+                       r'.*?'
+                       r'\n\n\s+(?P<message>.*?)$'
+                       r'(?:\n\n|\n.*?)',
                        changelog, re.MULTILINE | re.DOTALL)
 
 
