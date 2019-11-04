@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+#
+export DH_VERBOSE=1
+DESTDIR=debian/obs-service-git-tarballs
+
+%:
+	dh $@ --with python2
+
+override_dh_auto_build: ;
+
+override_dh_auto_test: ;
+
+override_dh_auto_install:
+	mkdir -p `pwd`/$(DESTDIR)/usr/lib/obs/service/
+	cp -a git_tarballs* `pwd`/$(DESTDIR)/usr/lib/obs/service/

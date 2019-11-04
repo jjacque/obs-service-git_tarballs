@@ -1,0 +1,15 @@
+Source: obs-service-git-tarballs
+Section: devel
+Priority: extra
+Maintainer: Adrian Schröter <adrian@suse.de>
+Build-Depends: debhelper (>= 7.0.0), dh-python, python (>= 2.6), python-argparse | python (>= 2.7), python-dateutil
+Standards-Version: 0.1.7
+Homepage: https://github.com/openSUSE/obs-service-git_tarballs
+X-Python-Version: >= 2.6
+
+Package: obs-service-git-tarballs
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python-dateutil, python-argparse
+Description: An OBS source service: downloads git tarballs
+ This is a source service for openSUSE Build Service.
+  It downloads a tarball and parses its git ChangeLog file for information about recent changes which then go to the package's .changes file.
