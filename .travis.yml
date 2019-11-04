@@ -2,7 +2,7 @@ language: python
 python:
  - "2.7"
 install:
- - pip install -r test-requirements.txt --use-mirrors
+ - pip install -r test-requirements.txt
 script:
  - nosetests
  - flake8 --ignore=E122 git_tarballs *py
